@@ -26,7 +26,7 @@ export class GpllGamePostViewListComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.source = this.posts$.subscribe((posts: IGamePost[]) => {
             this.nonFilteredPosts = posts;
-            this.applyFilter();
+            this.filteredPosts = posts;
         });
     }
 
