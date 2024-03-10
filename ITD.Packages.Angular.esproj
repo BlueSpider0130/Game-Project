@@ -1,0 +1,1330 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.62-alpha">
+  <PropertyGroup>
+    <StartupCommand>npm start</StartupCommand>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+    <!-- Command to run on project build -->
+    <BuildCommand>
+    </BuildCommand>
+    <!-- Command to create an optimized build of the project that's ready for publishing -->
+    <ProductionBuildCommand>npm run build</ProductionBuildCommand>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\playground</BuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="dist\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\styles.ea4c859d55b59690.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\runtime.d3cc2d1daa4f4fee.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\polyfills.b9f1f4757825cd6d.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\main.a6ffb0e3a9062d4f.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\playground\3rdpartylicenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\styles.e7549023a8c0034c.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\runtime.1eeac8c251dd3436.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\polyfills.3cacbc0a7af79ab4.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\main.76505e6fe86422aa.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\Chicle-Regular.3208ffe898442fa5.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\telegram-icon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\logo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\logo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\icons\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\home-art.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\fonts\Chicle\Chicle-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\Дом 7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\Дом 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\dead4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\dead3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\dead2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\dead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\6 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\2 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\assets\arts\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\3rdpartylicenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\ru\141.207ca26d7cc70d59.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\styles.e7549023a8c0034c.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\runtime.1eeac8c251dd3436.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\polyfills.3cacbc0a7af79ab4.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\main.76505e6fe86422aa.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\Chicle-Regular.3208ffe898442fa5.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\telegram-icon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\logo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\logo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\icons\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\home-art.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\fonts\Chicle\Chicle-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\Дом 7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\Дом 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\dead4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\dead3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\dead2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\dead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\6 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\2 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\assets\arts\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\3rdpartylicenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\landing\en-US\141.207ca26d7cc70d59.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\_theming.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\src\shared.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.directive.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.directive.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\utils\scroll-into-view.promise.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\utils\scroll-into-view.promise.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\services\navigation.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\services\navigation.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\services\logic-anchor-registration.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\services\logic-anchor-registration.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\navigation.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\navigation.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\models\element-ref-container.interface.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\models\element-ref-container.interface.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\directives\scroll-to-section.directive.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\directives\scroll-to-section.directive.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\directives\logic-anchor.directive.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\navigation\directives\logic-anchor.directive.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\button-to-scroll\_button-to-scroll.component.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\button-to-scroll\button-to-scroll.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\button-to-scroll\button-to-scroll.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\button-to-scroll\button-to-scroll.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\src\modules\button-to-scroll\button-to-scroll.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\itdl-shared-navigation.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\navigation\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\src\interfaces\localization-file-config.interface.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\src\interfaces\localization-file-config.interface.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\src\interfaces\language-config.interface.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\src\interfaces\language-config.interface.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\itdl-shared-localization.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\localization\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\section\container.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\section\container.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\section\container.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\section\container.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\header\header.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\header\header.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\header\header.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\header\header.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\footer\_footer.component.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\footer\footer.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\footer\footer.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\footer\footer.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\footer\footer.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\collage\_collage.component.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\collage\collage.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\collage\collage.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\collage\collage.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\src\modules\collage\collage.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\itdl-shared-layout.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\layout\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\itdl-shared.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\utils\encode-http-param.codec.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\utils\encode-http-param.codec.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\services\http.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\services\http.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\models\types\http-query-params.type.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\models\types\http-query-params.type.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\models\types\http-options.type.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\models\types\http-options.type.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\http.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\src\modules\http.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\itdl-shared-http.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\http\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-navigation.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-navigation.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-localization.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-layout.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-http.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-http.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-common.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-common.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-animations.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2020\itdl-shared-animations.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-navigation.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-navigation.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-localization.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-layout.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-http.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-http.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-common.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-common.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-animations.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\fesm2015\itdl-shared-animations.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\src\shared.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\src\shared.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\src\shared.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\scroll-to-logic-anchor\scroll-to-logic-anchor.directive.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\utils\scroll-into-view.promise.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\services\navigation.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\services\logic-anchor-registration.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\navigation.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\models\element-ref-container.interface.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\directives\scroll-to-section.directive.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\navigation\directives\logic-anchor.directive.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\button-to-scroll\button-to-scroll.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\src\modules\button-to-scroll\button-to-scroll.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\navigation\itdl-shared-navigation.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\localization\src\interfaces\localization-file-config.interface.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\localization\src\interfaces\language-config.interface.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\localization\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\localization\itdl-shared-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\with-button-to-scroll-decorator\with-button-to-scroll-decorator.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\section\container.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\section\container.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\header\header.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\header\header.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\footer\footer.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\footer\footer.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\collage\collage.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\src\modules\collage\collage.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\layout\itdl-shared-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\itdl-shared.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\src\modules\utils\encode-http-param.codec.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\src\modules\services\http.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\src\modules\models\types\http-query-params.type.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\src\modules\models\types\http-options.type.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\src\modules\http.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\http\itdl-shared-http.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\utils\destroyable\destroyable.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\utils\destroyable\destroyable.directive.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\utils\destroyable\destroyable.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\modules\with-required\with-required.type.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\modules\entity-store\entity-to-store.type.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\modules\entity-store\entity-store.abstract.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\src\decorators\cache-observable.decorator.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\common\itdl-shared-common.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\animations\src\common.animations.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\animations\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\esm2020\animations\itdl-shared-animations.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.directive.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.directive.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\utils\destroyable\destroyable.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\with-required\with-required.type.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\with-required\with-required.type.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\entity-store\entity-to-store.type.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\entity-store\entity-to-store.type.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\entity-store\entity-store.abstract.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\modules\entity-store\entity-store.abstract.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\decorators\cache-observable.decorator.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\src\decorators\cache-observable.decorator.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\itdl-shared-common.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\common\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\src\common.animations.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\src\common.animations.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\itdl-shared-animations.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\shared\animations\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\src\portal.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app-routing.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\portal-app-routing.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page-routing.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\src\pages\home-page\home-page-routing.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\itdl-portal-portal-app.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\portal-app\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\itdl-portal.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\fesm2020\itdl-portal.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\fesm2020\itdl-portal.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\fesm2015\itdl-portal.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\fesm2015\itdl-portal.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\src\portal.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\src\portal.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\src\portal.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\portal-app.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\portal-app.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\portal-app-routing.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\pages\home-page\home-page.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\pages\home-page\home-page.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\src\pages\home-page\home-page-routing.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\portal-app\itdl-portal-portal-app.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\portal\esm2020\itdl-portal.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\_theming.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\src\lib\landing.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\utils\app-l10n-initializer.utils.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\utils\app-l10n-initializer.utils.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\services\app-translate.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\services\app-translate.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\services\app-l10n-translation-loader.service.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\services\app-l10n-translation-loader.service.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\root-localization.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\root-localization.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\pipes\xtranslate.pipe.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\pipes\xtranslate.pipe.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\enums\language-type.enum.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\enums\language-type.enum.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\enums\language-code.enum.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\enums\language-code.enum.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\config\app-localization.config.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\config\app-localization.config.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\config\app-l10.config.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\config\app-l10.config.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\child-localization.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\src\modules\child-localization.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\itdl-landing-localization.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\localization\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\tooltip\_tooltip-overrides.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\nav\nav.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\nav\nav.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\nav\nav.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\nav\nav.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\_menu-item.component.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\models\menu-item.config.model.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\models\menu-item.config.model.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\menu-item.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\menu-item.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\menu-item.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\src\modules\menu-item\menu-item.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\itdl-landing-layout.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\layout\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\itdl-landing.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\who-we-are-section\who-we-are-section.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\who-we-are-section\who-we-are-section.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\who-we-are-section\who-we-are-section.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\who-we-are-section\who-we-are-section.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\what-we-do-section\what-we-do-section.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\what-we-do-section\what-we-do-section.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\what-we-do-section\what-we-do-section.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\what-we-do-section\what-we-do-section.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\greeting-section\_greeting-section.component.theme.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\greeting-section\greeting-section.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\greeting-section\greeting-section.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\greeting-section\greeting-section.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\greeting-section\greeting-section.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\contact-us-section\contact-us-section.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\contact-us-section\contact-us-section.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\contact-us-section\contact-us-section.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\modules\contact-us-section\contact-us-section.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\home-content.module.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\home-content.module.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\home-content.component.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\src\home-content.component.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\public-api.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\public-api.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\itdl-landing-home-content.d.ts.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\home-content\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-localization.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-layout.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-home-content.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2020\itdl-landing-home-content.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-localization.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-layout.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-home-content.mjs.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\fesm2015\itdl-landing-home-content.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\src\lib\landing.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\src\lib\landing.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\src\lib\landing.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\utils\app-l10n-initializer.utils.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\services\app-translate.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\services\app-l10n-translation-loader.service.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\root-localization.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\pipes\xtranslate.pipe.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\enums\language-type.enum.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\enums\language-code.enum.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\config\app-localization.config.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\config\app-l10.config.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\src\modules\child-localization.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\localization\itdl-landing-localization.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\src\modules\nav\nav.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\src\modules\nav\nav.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\src\modules\menu-item\models\menu-item.config.model.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\src\modules\menu-item\menu-item.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\src\modules\menu-item\menu-item.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\layout\itdl-landing-layout.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\itdl-landing.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\who-we-are-section\who-we-are-section.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\who-we-are-section\who-we-are-section.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\what-we-do-section\what-we-do-section.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\what-we-do-section\what-we-do-section.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\greeting-section\greeting-section.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\greeting-section\greeting-section.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\contact-us-section\contact-us-section.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\modules\contact-us-section\contact-us-section.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\home-content.module.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\src\home-content.component.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\public-api.mjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dist\itdl\landing\esm2020\home-content\itdl-landing-home-content.mjs" />
+  </ItemGroup>
+</Project>

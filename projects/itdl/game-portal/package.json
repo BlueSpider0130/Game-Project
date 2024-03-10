@@ -1,0 +1,43 @@
+{
+    "name": "@itdl/game-portal",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^15.2.0",
+        "@angular/core": "^15.2.0",
+        "@angular/material": "^15.0.3",
+        "@itdl/shared": "^0.0.1"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "npm run start:lib:game-portal",
+        "build:dep": "npm run build:lib:game-portal:dep",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "lint": "ng lint --format table",
+        "eslint": "eslint",
+        "prettier": "prettier",
+        "rimraf": "rimraf",
+        "run-s": "run-s",
+        "wait-for": "node ../../../scripts/wait-for.js",
+        "run-ask": "node ../../../scripts/run-ask.js",
+        "run-arg": "node ../../../scripts/run-arg.js",
+        "run-watch-seq": "node ../../../scripts/run-watch-seq.js",
+        "NO:COMMAND:SCRIPTS:SECTION": "----------------------------------SCRIPTS SECTION----------------------------------------------",
+        "build:lib:game-portal:prod": "run-s \"build -- --project=@itdl/game-portal --configuration=production\"",
+        "build:lib:game-portal": "run-s \"build -- --project=@itdl/game-portal\"",
+        "start:lib:game-portal": "npm run run-watch-seq \"npm run watch:lib:shared\" \"npm run watch:lib:game-portal\"",
+        "watch:lib:game-portal": "run-s \"watch -- --project=@itdl/game-portal\"",
+        "lint:lib:game-portal": "run-s \"lint @itdl/game-portal\"",
+        "test:lib:game-portal": "run-s \"test @itdl/game-portal\"",
+        "storybook:lib:game-portal": "run-s \"ng run @itdl/game-portal:storybook\"",
+        "storybook-build:lib:game-portal": "run-s \"ng run @itdl/game-portal:build-storybook\"",
+        "clean:lib:game-portal": "run-s \"rimraf ../../../dist/itdl/game-portal\"",
+        "NO:COMMAND:DEPENDENCIES:SECTION": "-----------------------------DEPENDENCIES SECTION-----------------------------------------",
+        "watch:lib:shared": "npm run watch:lib:shared --prefix=../shared",
+        "build:lib:shared": "npm run build:lib:shared --prefix=../shared"
+    }
+}

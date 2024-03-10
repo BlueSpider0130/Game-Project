@@ -1,0 +1,46 @@
+<mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav></mat-sidenav>
+    <mat-sidenav-content>
+        <lndl-nav (languageChangedEvent)="languageChanged($event)" [logoSrc]="logoSrc"></lndl-nav>
+
+        <shrl-with-button-to-scroll-decorator
+            mode="light"
+            direction="down"
+            tooltipText="Go to Next Section"
+            toLogicAnchorName="whatWeDo">
+            <lndl-greeting-section [shrlLogicAnchor]="'introduction'" [backgroundSrc]="backgroundSrc">
+            </lndl-greeting-section>
+        </shrl-with-button-to-scroll-decorator>
+
+        <shrl-with-button-to-scroll-decorator
+            mode="dark"
+            direction="down"
+            tooltipText="Go to Next Section"
+            toLogicAnchorName="whoWeAre">
+            <lndl-what-we-do-section [shrlLogicAnchor]="'whatWeDo'"> </lndl-what-we-do-section>
+        </shrl-with-button-to-scroll-decorator>
+
+        <shrl-with-button-to-scroll-decorator
+            mode="dark"
+            direction="down"
+            tooltipText="Go to Next Section"
+            toLogicAnchorName="contactUs">
+            <lndl-who-we-are-section [shrlLogicAnchor]="'whoWeAre'"> </lndl-who-we-are-section>
+        </shrl-with-button-to-scroll-decorator>
+
+        <shrl-with-button-to-scroll-decorator
+            mode="dark"
+            direction="up"
+            tooltipText="Go to Top Section"
+            toLogicAnchorName="introduction">
+            <lndl-contact-us-section [shrlLogicAnchor]="'contactUs'"></lndl-contact-us-section>
+        </shrl-with-button-to-scroll-decorator>
+
+        <shrl-footer></shrl-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #homeContentDefaultTemplate></ng-template>
+<ng-template #footerDefaultTemplate>
+    <shrl-footer></shrl-footer>
+</ng-template>

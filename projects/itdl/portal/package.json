@@ -1,0 +1,42 @@
+{
+    "name": "@itdl/portal",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0",
+        "@angular/material": "^15.0.3",
+        "@itdl/shared": "^0.0.1"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "npm run start:lib:portal",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "lint": "ng lint --format table",
+        "eslint": "eslint",
+        "prettier": "prettier",
+        "rimraf": "rimraf",
+        "run-s": "run-s",
+        "wait-for": "node ../../../scripts/wait-for.js",
+        "run-ask": "node ../../../scripts/run-ask.js",
+        "run-arg": "node ../../../scripts/run-arg.js",
+        "NO:COMMAND:SCRIPTS:SECTION": "----------------------------------SCRIPTS SECTION----------------------------------------------",
+        "start:lib:portal": "npm-run-all clean:lib:shared --parallel \"watch:lib:shared\" \"run-s wait-for:lib:shared watch:lib:portal",
+        "build:lib:portal": "run-s \"build -- --project=@itdl/portal\"",
+        "watch:lib:portal": "run-s \"watch -- --project=@itdl/portal\"",
+        "lint:lib:portal": "run-s \"lint @itdl/portal\"",
+        "test:lib:portal": "run-s \"test @itdl/portal\"",
+        "storybook:lib:portal": "run-s \"ng run @itdl/portal:storybook\"",
+        "storybook-build:lib:portal": "run-s \"ng run @itdl/portal:build-storybook\"",
+        "clean:lib:portal": "run-s \"rimraf ../../../dist/itdl/portal\"",
+        "wait-for:lib:portal": "run-s \"wait-for ../../../dist/itdl/portal\"",
+        "NO:COMMAND:DEPENDENCIES:SECTION": "-----------------------------DEPENDENCIES SECTION-----------------------------------------",
+        "clean:lib:shared": "npm run clean:lib:shared --prefix=../shared",
+        "wait-for:lib:shared": "npm run wait-for:lib:shared --prefix=../shared",
+        "watch:lib:shared": "npm run watch:lib:shared --prefix=../shared"
+    }
+}

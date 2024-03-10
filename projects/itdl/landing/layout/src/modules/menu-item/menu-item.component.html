@@ -1,0 +1,24 @@
+<ng-container *ngIf="config.subMenus && config.subMenus.length > 0; else elseBlock">
+    <li
+        class="text-center"
+        [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger"
+        (mouseenter)="menuTrigger.openMenu()">
+        {{ config.titleKey | xtranslate }}
+    </li>
+
+    <mat-menu #menu="matMenu" backdropClass="menu-item-component">
+        <button
+            *ngFor="let subMenuItem of config.subMenus"
+            [shrlScrollToLogicAnchor]="{ logicAnchorName: subMenuItem.logicAnchorName }"
+            (click)="subMenuItem.action && subMenuItem.action()"
+            mat-menu-item>
+            {{ subMenuItem.titleKey | xtranslate }}
+        </button>
+    </mat-menu>
+</ng-container>
+<ng-template #elseBlock>
+    <li class="text-center">
+        {{ config.titleKey | xtranslate }}
+    </li>
+</ng-template>

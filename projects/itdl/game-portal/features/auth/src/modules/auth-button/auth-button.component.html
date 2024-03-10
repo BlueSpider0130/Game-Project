@@ -1,0 +1,9 @@
+<ng-container *rxLet="authService.isAuthenticated$; let isAuthenticated">
+    <ng-container *ngIf="isAuthenticated; else isNotAuthenticated">
+        <button mat-raised-button color="warn" (click)="logout()">Log out</button>
+        <ng-container *rxLet="authService.user$; let user"> {{ user?.name }} </ng-container>
+    </ng-container>
+    <ng-template #isNotAuthenticated>
+        <button mat-raised-button color="primary" (click)="loginWithRedirect()">Login</button>
+    </ng-template>
+</ng-container>

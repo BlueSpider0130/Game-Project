@@ -1,0 +1,46 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "importHelpers": true,
+        "paths": {
+            "@game-portal/*": ["projects/game-portal/src/app/*"],
+            "@landing/*": ["projects/landing/src/app/*"],
+            "portal/*": ["projects/portal/*"],
+            "playground/*": ["projects/playground/*"],
+            "@itdl/landing/*": ["projects/itdl/landing/*"],
+            "@itdl/landing": ["projects/itdl/landing"],
+            "@itdl/portal/*": ["projects/itdl/portal/*"],
+            "@itdl/portal": ["projects/itdl/portal"],
+            "@itdl/game-portal/*": ["projects/itdl/game-portal/*"],
+            "@itdl/game-portal": ["projects/itdl/game-portal"],
+            "@itdl/shared/*": ["projects/itdl/shared/*"],
+            "@itdl/shared": ["projects/itdl/shared"]
+        },
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": false,
+        "lib": ["ES2022", "dom"],
+        "types": ["jest"]
+        // "typeRoots": ["node_modules/@angular/material", "node_modules/@types"]
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    }
+}

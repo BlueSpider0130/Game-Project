@@ -1,0 +1,15 @@
+<nav class="w-full">
+    <div class="container mx-auto px-10">
+        <div class="flex flex-row py-10">
+            <div class="basis-3/6">
+                <img [src]="logoSrc" alt="logo" />
+            </div>
+            <ul class="navigation-links basis-3/6 flex flex-row justify-around items-center">
+                <lndl-menu-item class="basis-1/4" [config]="homeMenuItemConfig"></lndl-menu-item>
+                <lndl-menu-item class="basis-1/4" [config]="aboutUsMenuItemConfig"> </lndl-menu-item>
+                <lndl-menu-item class="basis-1/4" [config]="contactUsItemConfig"></lndl-menu-item>
+                <lndl-menu-item class="basis-1/4 ml-5" [config]="languageMenuItemConfig"></lndl-menu-item>
+            </ul>
+        </div>
+    </div>
+</nav>

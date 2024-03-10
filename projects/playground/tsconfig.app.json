@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/app",
+        "types": [],
+        "paths": {
+            // "@itdl/landing/*": ["dist/itdl/landing/*"],
+            // "@itdl/landing": ["dist/itdl/landing"],
+            // "@itdl/portal/*": ["dist/itdl/portal/*"],
+            // "@itdl/portal": ["dist/itdl/portal"],
+            "@itdl/shared/*": ["dist/itdl/shared/*"],
+            "@itdl/shared": ["dist/itdl/shared"]
+        }
+    },
+    "files": ["src/main.ts"],
+    "include": ["src/**/*.d.ts"],
+    "exclude": ["**/*.stories.*"]
+}

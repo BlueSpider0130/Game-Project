@@ -1,0 +1,30 @@
+<gpll-auth-context *shrlServerLoader="loaderConfig">
+    <ng-template>
+        <mat-toolbar color="primary" *shrlServerLoader="loaderConfig">
+            <button
+                mat-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with menu icon"
+                (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>{{ 'Header.LogoName' | gpllTranslate }}</span>
+            <span class="example-spacer"></span>
+           
+            <a class="px-4 py-2" [routerLink]="['/game-posts']">{{ 'Header.NavigationLinks.News' | gpllTranslate }}</a>
+            <a class="px-4 py-2" [routerLink]="['']">{{ 'Header.NavigationLinks.Home' | gpllTranslate }}</a>
+            <a class="px-4 py-2" [routerLink]="['/gamedefs']">{{ 'Header.NavigationLinks.Games' | gpllTranslate }}</a>
+            <ng-container *rxLet="isAdmin$; let isAdmin">
+                <ng-container *ngIf="isAdmin">
+                    <a class="px-4 py-2">Admin</a>
+                </ng-container>
+            </ng-container>
+            <gpll-auth-button></gpll-auth-button>
+            <gpll-theme-toggler
+                *ngIf="theme$ | async as theme"
+                [theme]="theme"
+                (changeEvent)="actions.themeToggleChange()">
+            </gpll-theme-toggler>
+        </mat-toolbar>
+    </ng-template>
+</gpll-auth-context>

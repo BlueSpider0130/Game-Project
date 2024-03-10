@@ -1,0 +1,23 @@
+{
+    "scripts": {
+        "NO:COMMAND:READYTOUSE:SECTION": "--------------------------------READY TO USE SECTION------------------------------------------",
+        "generate:general": "npm run run-ask \"npm run generate:general:template {0} {1}\" \"Please enter name of project\" \"Please enter path of module relative from projects folder\"",
+        "generate:component": "npm run run-ask \"npm run generate:component:template {0} {1}\" \"Please enter name of project\" \"Please enter path of module relative from projects folder\"",
+        "NO:COMMAND:GENERATE:SECTION": "----------------------------------GENERATE SECTION----------------------------------------------",
+        "generate:general:template": "run-s \"generate:general:template:m -- {1} {2}\" \"generate:general:template:c -- {1} {2}\" \"generate:general:format:* -- {2}\" --",
+        "generate:general:template:m": "npm run run-arg \"ng generate m ../projects/{1} --project={0} --routing\"",
+        "generate:general:template:c": "npm run run-arg \"ng generate c ../projects/{1} --project={0} --style=scss --skip-tests\"",
+        "generate:general:format:p": "npm run run-arg \"npm run prettier ../projects/{0}/**/*.{html,ts} -- --write --check\"",
+        "generate:general:format:l": "npm run run-arg \"npm run eslint ../projects/{0}/**/*.{html,ts} -- --format table --fix\"",
+        "generate:component:template": "run-s \"generate:component:standalone -- {1} {2}\" \"generate:general:format:* -- {2}\" --",
+        "generate:component:standalone": "npm run run-arg \"ng generate c ../projects/{1} --project={0} --style=scss --skip-tests --standalone\"",
+        "NO:COMMAND:REFERENCES:SECTION": "--------------------------------REFERENCES SECTION--------------------------------------------",
+        "run-s": "run-s",
+        "wait-for": "node ./wait-for.js",
+        "run-ask": "node ./run-ask.js",
+        "run-arg": "node ./run-arg.js",
+        "run-watch-seq": "node ./run-watch-seq.js",
+        "prettier": "prettier",
+        "eslint": "eslint"
+    }
+}

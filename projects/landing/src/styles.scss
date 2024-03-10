@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'styles/custom-theme';
+@import 'styles/components-theme';
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+li {
+    list-style: none;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'Chicle';
+    src: local('Chicle'), url(./assets/fonts/Chicle/Chicle-Regular.ttf) format('truetype');
+}

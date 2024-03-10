@@ -1,0 +1,18 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/app",
+        "types": [],
+        "typeRoots": ["node_modules/@angular/material"],
+        "paths": {
+            "@landing/*": ["projects/landing/src/app/*"],
+            "@itdl/landing/*": ["dist/itdl/landing/*"],
+            "@itdl/landing": ["dist/itdl/landing"],
+            "@itdl/shared/*": ["dist/itdl/shared/*"],
+            "@itdl/shared": ["dist/itdl/shared"]
+        }
+    },
+    "files": ["src/main.ts"],
+    "include": ["src/**/*.d.ts"]
+}

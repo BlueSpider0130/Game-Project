@@ -1,0 +1,16 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/app",
+        "types": [],
+        "paths": {
+            "@itdl/portal/*": ["dist/itdl/portal/*"],
+            "@itdl/portal": ["dist/itdl/portal"],
+            "@itdl/shared/*": ["dist/itdl/shared/*"],
+            "@itdl/shared": ["dist/itdl/shared"]
+        }
+    },
+    "files": ["src/main.ts"],
+    "include": ["src/**/*.d.ts"]
+}

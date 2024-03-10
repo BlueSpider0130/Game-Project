@@ -1,0 +1,31 @@
+{
+    "HomePage": {
+        "GreetingSection": {
+            "NavigationMenu": {
+                "Home": {
+                    "Title": "Home"
+                },
+                "AboutUs": {
+                    "Title": "About Us",
+                    "SubMenus": {
+                        "WhoWeAre": {
+                            "Title": "Who we are"
+                        },
+                        "WhatWeDo": {
+                            "Title": "What we do"
+                        },
+                        "WhatAreOurGoals": {
+                            "Title": "What are our goals"
+                        }
+                    }
+                },
+                "ContactUs": {
+                    "Title": "Contact Us"
+                },
+                "Language": {
+                    "Title": "Language"
+                }
+            }
+        }
+    }
+}

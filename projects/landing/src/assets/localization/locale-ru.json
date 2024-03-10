@@ -1,0 +1,31 @@
+{
+    "HomePage": {
+        "GreetingSection": {
+            "NavigationMenu": {
+                "Home": {
+                    "Title": "Начальная Страница"
+                },
+                "AboutUs": {
+                    "Title": "О нас",
+                    "SubMenus": {
+                        "WhoWeAre": {
+                            "Title": "Кто мы такие"
+                        },
+                        "WhatWeDo": {
+                            "Title": "Чем мы занимаемся"
+                        },
+                        "WhatAreOurGoals": {
+                            "Title": "Наши цели"
+                        }
+                    }
+                },
+                "ContactUs": {
+                    "Title": "Обратная связь"
+                },
+                "Language": {
+                    "Title": "Языки"
+                }
+            }
+        }
+    }
+}

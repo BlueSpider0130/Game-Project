@@ -1,0 +1,42 @@
+{
+    "name": "@itdl/landing",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0",
+        "@angular/material": "^15.0.3",
+        "@itdl/shared": "^0.0.1"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "npm run start:lib:landing",
+        "build:dep": "npm run build:lib:landing:dep",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "lint": "ng lint --format table",
+        "eslint": "eslint",
+        "prettier": "prettier",
+        "rimraf": "rimraf",
+        "run-s": "run-s",
+        "wait-for": "node ../../../scripts/wait-for.js",
+        "run-ask": "node ../../../scripts/run-ask.js",
+        "run-arg": "node ../../../scripts/run-arg.js",
+        "run-watch-seq": "node ../../../scripts/run-watch-seq.js",
+        "NO:COMMAND:SCRIPTS:SECTION": "----------------------------------SCRIPTS SECTION----------------------------------------------",
+        "start:lib:landing": "npm run run-watch-seq \"npm run watch:lib:shared\" \"npm run watch:lib:landing\"",
+        "watch:lib:landing": "run-s \"watch -- --project=@itdl/landing\"",
+        "build:lib:landing": "run-s \"build -- --project=@itdl/landing\"",
+        "lint:lib:landing": "run-s \"lint @itdl/landing\"",
+        "test:lib:landing": "run-s \"test @itdl/landing\"",
+        "storybook:lib:landing": "run-s \"ng run @itdl/landing:storybook\"",
+        "storybook-build:lib:landing": "run-s \"ng run @itdl/landing:build-storybook\"",
+        "clean:lib:landing": "run-s \"rimraf ../../../dist/itdl/landing\"",
+        "NO:COMMAND:DEPENDENCIES:SECTION": "-----------------------------DEPENDENCIES SECTION-----------------------------------------",
+        "watch:lib:shared": "npm run watch:lib:shared --prefix=../shared",
+        "build:lib:shared": "npm run build:lib:shared --prefix=../shared"
+    }
+}

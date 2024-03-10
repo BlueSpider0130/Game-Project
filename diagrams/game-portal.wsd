@@ -1,0 +1,64 @@
+@startuml
+
+[*] --> Game
+
+state Game {
+    state "Preparation Game State" as PreparationGameState
+    PreparationGameState: Show board for users
+
+    state "Start Round State" as StartRoundState
+    StartRoundState: Create round put to object
+
+    state "Choose Player State" as ChoosePlayerState
+    ChoosePlayerState: Generate 3 words
+    ChoosePlayerState: Suggest user to choose One
+    ChoosePlayerState: Notify other users that other user is choosing
+
+    state "Pre-Drawing Sate" as PreDrawingState
+    PreDrawingState: Show Drawing tool for master user
+    PreDrawingState: Show chats for other users
+
+    state "Drawing State" as DrawingState
+    DrawingState: Master user draw picture
+    DrawingState: Other users guess word9
+
+    state "Player Guess Word State" as PlayerGuessWordState
+
+    state "No One Guess Word State" as NoOneGuessWordState
+
+    state "Show Word and Winner State" as ShowWordAndWinnerState
+    state "Show Word State" as ShowWordState
+
+    state "End Or Proceed Game State" as EndOrProceedGameState
+
+    state "Show Final Result State" as ShowFinalResult
+
+    [*] -> PreparationGameState
+
+    PreparationGameState --> StartRoundState
+
+    StartRoundState -> ChoosePlayerState
+
+    ChoosePlayerState --> ChoosePlayerState : Time is up
+    ChoosePlayerState --> ChoosePlayerState : Player skip
+
+    ChoosePlayerState --> PreDrawingState
+    PreDrawingState --> DrawingState
+
+    DrawingState -> DrawingState : Guessing process
+    DrawingState --> PlayerGuessWordState
+    DrawingState --> NoOneGuessWordState : Time is up
+
+    PlayerGuessWordState --> ShowWordAndWinnerState
+    NoOneGuessWordState --> ShowWordState
+
+    ShowWordState --> EndOrProceedGameState
+    ShowWordAndWinnerState --> EndOrProceedGameState
+
+    EndOrProceedGameState --> StartRoundState
+    EndOrProceedGameState --> ShowFinalResult
+
+    ShowFinalResult --> [*]
+}
+
+@enduml

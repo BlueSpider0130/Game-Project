@@ -1,0 +1,842 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "playground": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/playground",
+            "sourceRoot": "projects/playground/src",
+            "prefix": "plg",
+            "architect": {
+                "build": {
+                    "builder": "@angular-builders/custom-webpack:browser",
+                    "options": {
+                        "customWebpackConfig": {
+                            "path": "./projects/playground/.webpack/webpack.browser.config.js"
+                        },
+                        "outputPath": "dist/playground",
+                        "index": "projects/playground/src/index.html",
+                        "main": "projects/playground/src/main.ts",
+                        "polyfills": [
+                            "zone.js"
+                        ],
+                        "tsConfig": "projects/playground/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/playground/src/favicon.ico",
+                            "projects/playground/src/assets"
+                        ],
+                        "styles": [
+                            "projects/playground/src/custom-theme.scss",
+                            "projects/playground/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "1mb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "playground:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "playground:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "playground:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/playground/tsconfig.spec.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/playground/src/favicon.ico",
+                            "projects/playground/src/assets"
+                        ],
+                        "styles": [
+                            "projects/playground/src/custom-theme.scss",
+                            "projects/playground/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/playground/**/*.ts",
+                            "projects/playground/**/*.html"
+                        ]
+                    }
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "browserTarget": "playground:build",
+                        "configDir": ".storybook",
+                        "compodocArgs": [
+                            "-p",
+                            "projects/playground/.storybook/tsconfig.json",
+                            "-d",
+                            "projects/playground/.storybook",
+                            "-e",
+                            "json"
+                        ],
+                        "port": 6006
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "browserTarget": "playground:build",
+                        "compodocArgs": [
+                            "-p",
+                            "projects/playground/tsconfig.app.json",
+                            "-d",
+                            "./projects/playground/.storybook",
+                            "-e",
+                            "json"
+                        ]
+                    }
+                }
+            }
+        },
+        "portal": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/portal",
+            "sourceRoot": "projects/portal/src",
+            "prefix": "prtl",
+            "architect": {
+                "build": {
+                    "builder": "@angular-builders/custom-webpack:browser",
+                    "options": {
+                        "customWebpackConfig": {
+                            "path": "projects/portal/.webpack/webpack.browser.config.js"
+                        },
+                        "outputPath": "dist/portal",
+                        "index": "projects/portal/src/index.html",
+                        "main": "projects/portal/src/main.ts",
+                        "polyfills": [
+                            "zone.js"
+                        ],
+                        "tsConfig": "projects/portal/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/portal/src/favicon.ico",
+                            "projects/portal/src/assets"
+                        ],
+                        "styles": [
+                            "projects/portal/src/custom-theme.scss",
+                            "projects/portal/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "portal:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "portal:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "portal:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/portal/tsconfig.spec.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/portal/src/favicon.ico",
+                            "projects/portal/src/assets"
+                        ],
+                        "styles": [
+                            "projects/portal/src/custom-theme.scss",
+                            "projects/portal/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/portal/**/*.ts",
+                            "projects/portal/**/*.html"
+                        ]
+                    }
+                }
+            }
+        },
+        "landing": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/landing",
+            "sourceRoot": "projects/landing/src",
+            "prefix": "lnd",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/landing",
+                        "index": "projects/landing/src/index.html",
+                        "main": "projects/landing/src/main.ts",
+                        "polyfills": [
+                            "zone.js"
+                        ],
+                        "tsConfig": "projects/landing/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/landing/src/favicon.ico",
+                            "projects/landing/src/assets"
+                        ],
+                        "styles": [
+                            "projects/landing/src/styles.scss"
+                        ],
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "projects/itdl/shared",
+                                "dist/itdl/shared"
+                            ]
+                        },
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/landing/src/environments/environment.ts",
+                                    "with": "projects/landing/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "landing:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "landing:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "landing:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/landing/tsconfig.spec.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/landing/src/favicon.ico",
+                            "projects/landing/src/assets"
+                        ],
+                        "styles": [
+                            "projects/landing/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/landing/**/*.ts",
+                            "projects/landing/**/*.html"
+                        ]
+                    }
+                }
+            }
+        },
+        "@itdl/landing": {
+            "projectType": "library",
+            "root": "projects/itdl/landing",
+            "sourceRoot": "projects/itdl/landing/src",
+            "prefix": "lndl",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/itdl/landing/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/itdl/landing/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/itdl/landing/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "tsConfig": "projects/itdl/landing/tsconfig.spec.json",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/itdl/landing/**/*.ts",
+                            "projects/itdl/landing/**/*.html"
+                        ]
+                    }
+                }
+            }
+        },
+        "@itdl/portal": {
+            "projectType": "library",
+            "root": "projects/itdl/portal",
+            "sourceRoot": "projects/itdl/portal/src",
+            "prefix": "prtl",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/itdl/portal/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/itdl/portal/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/itdl/portal/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "tsConfig": "projects/itdl/portal/tsconfig.spec.json",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/itdl/portal/**/*.ts",
+                            "projects/itdl/portal/**/*.html"
+                        ]
+                    }
+                }
+            }
+        },
+        "@itdl/shared": {
+            "projectType": "library",
+            "root": "projects/itdl/shared",
+            "sourceRoot": "projects/itdl/shared/src",
+            "prefix": "shrl",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/itdl/shared/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/itdl/shared/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/itdl/shared/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "tsConfig": "projects/itdl/shared/tsconfig.spec.json",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/itdl/shared/**/*.ts",
+                            "projects/itdl/shared/**/*.html"
+                        ]
+                    }
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "browserTarget": "shared-lib:build",
+                        "configDir": ".storybook",
+                        "compodocArgs": [
+                            "-p",
+                            "projects/shared-lib/.storybook/tsconfig.json",
+                            "-d",
+                            "projects/shared-lib/.storybook",
+                            "-e",
+                            "json"
+                        ],
+                        "port": 6007
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "browserTarget": "shared-lib:build",
+                        "compodocArgs": [
+                            "-p",
+                            "projects/shared-lib/tsconfig.app.json",
+                            "-d",
+                            "./projects/shared-lib/.storybook",
+                            "-e",
+                            "json"
+                        ]
+                    }
+                }
+            }
+        },
+        "game-portal": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/game-portal",
+            "sourceRoot": "projects/game-portal/src",
+            "prefix": "gpl",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/game-portal",
+                        "index": "projects/game-portal/src/index.html",
+                        "main": "projects/game-portal/src/main.ts",
+                        "polyfills": [
+                            "projects/game-portal/src/polyfills.ts"
+                        ],
+                        "tsConfig": "projects/game-portal/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/game-portal/src/favicon.ico",
+                            "projects/game-portal/src/assets",
+                            "projects/game-portal/src/manifest.webmanifest",
+                            {
+                                "glob": "**/*",
+                                "input": "./node_modules/leaflet/dist/images",
+                                "output": "assets/leaflet/"
+                            }
+                        ],
+                        "styles": [
+                            "projects/game-portal/src/styles.scss"
+                        ],
+                        "allowedCommonJsDependencies": [
+                            "konva"
+                        ],
+                        "scripts": [],
+                        "serviceWorker": true,
+                        "ngswConfigPath": "projects/game-portal/ngsw-config.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/game-portal/src/environments/environment.ts",
+                                    "with": "projects/game-portal/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "build-express": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/game-portal/browser",
+                        "index": "projects/game-portal/src/index.html",
+                        "main": "projects/game-portal/src/main.ts",
+                        "polyfills": [
+                            "projects/game-portal/src/polyfills.ts"
+                        ],
+                        "tsConfig": "projects/game-portal/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/game-portal/src/favicon.ico",
+                            "projects/game-portal/src/assets",
+                            "projects/game-portal/src/manifest.webmanifest"
+                        ],
+                        "styles": [
+                            "projects/game-portal/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "game-portal:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "game-portal:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "game-portal:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/game-portal/tsconfig.spec.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "projects/game-portal/src/favicon.ico",
+                            "projects/game-portal/src/assets",
+                            "projects/game-portal/src/manifest.webmanifest"
+                        ],
+                        "styles": [
+                            "projects/game-portal/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/game-portal/**/*.ts",
+                            "projects/game-portal/**/*.html"
+                        ]
+                    }
+                },
+                "server-express": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/game-portal/server",
+                        "main": "projects/game-portal/server.ts",
+                        "tsConfig": "projects/game-portal/tsconfig.server.json",
+                        "inlineStyleLanguage": "scss"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media"
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/game-portal/server",
+                        "main": "projects/game-portal/src/main.server.ts",
+                        "tsConfig": "projects/game-portal/tsconfig.server.json",
+                        "inlineStyleLanguage": "scss"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media"
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "game-portal:build:development",
+                            "serverTarget": "game-portal:server:development"
+                        },
+                        "production": {
+                            "browserTarget": "game-portal:build:production",
+                            "serverTarget": "game-portal:server:production"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "serve-ssr-express": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "game-portal:build-express:development",
+                            "serverTarget": "game-portal:server-express:development"
+                        },
+                        "production": {
+                            "browserTarget": "game-portal:build-express:production",
+                            "serverTarget": "game-portal:server-express:production"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "routes": [
+                            "/"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "game-portal:build:production",
+                            "serverTarget": "game-portal:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "game-portal:build:development",
+                            "serverTarget": "game-portal:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                }
+            }
+        },
+        "@itdl/game-portal": {
+            "projectType": "library",
+            "root": "projects/itdl/game-portal",
+            "sourceRoot": "projects/itdl/game-portal/src",
+            "prefix": "gpll",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/itdl/game-portal/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/itdl/game-portal/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/itdl/game-portal/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "tsConfig": "projects/itdl/game-portal/tsconfig.spec.json",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "projects/itdl/game-portal/**/*.ts",
+                            "projects/itdl/game-portal/**/*.html"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+        "schematicCollections": [
+            "@angular-eslint/schematics"
+        ],
+        "analytics": false
+    }
+}

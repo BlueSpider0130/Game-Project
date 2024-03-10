@@ -1,0 +1,10 @@
+{
+    "Header": {
+        "LogoName": "Игровой портал",
+        "NavigationLinks": {
+            "Home": "Главная",
+            "Games": "Игры",
+            "News": "Новости"
+        }
+    }
+}

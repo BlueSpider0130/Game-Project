@@ -1,0 +1,44 @@
+{
+    "name": "@itdl/shared",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0",
+        "@angular/material": "^15.0.3",
+        "@microsoft/signalr": "^7.0.7"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "watch": "ng build --watch --configuration development",
+        "test": "ng test",
+        "lint": "ng lint --format table",
+        "eslint": "eslint",
+        "prettier": "prettier",
+        "rimraf": "rimraf",
+        "wait-for": "node ../../../scripts/wait-for.js",
+        "run-ask": "node ../../../scripts/run-ask.js",
+        "run-arg": "node ../../../scripts/run-arg.js",
+        "run-when": "node ../../../scripts/run-when.js",
+        "run-watch-seq": "node ../../../scripts/run-watch-seq.js",
+        "NO:COMMAND:SCRIPTS:SECTION": "----------------------------------SCRIPTS SECTION----------------------------------------------",
+        "build:lib:shared:prod": "run-s \"build -- --project=@itdl/shared --configuration=production\"",
+        "build:lib:shared": "run-s \"build -- --project=@itdl/shared\"",
+        "watch:lib:shared": "run-s \"watch -- --project=@itdl/shared\"",
+        "lint:lib:shared": "run-s \"lint @itdl/shared\"",
+        "test:lib:shared": "run-s \"test @itdl/shared\"",
+        "storybook:lib:shared": "run-s \"ng run @itdl/shared:storybook\"",
+        "storybook-build:lib:shared": "run-s \"ng run @itdl/shared:build-storybook\"",
+        "clean:lib:shared": "run-s \"rimraf ../../../dist/itdl/shared\"",
+        "wait-for:lib:shared": "run-s \"wait-for ../../../dist/itdl/shared\""
+    },
+    "exports": {
+        "./theming": {
+            "sass": "./_theming.scss"
+        }
+    }
+}

@@ -1,0 +1,4 @@
+@forward './home-content/src/modules/greeting-section/greeting-section.component.theme' as greeting-section-* show greeting-section-theme;
+
+@forward './layout/src/modules/tooltip/tooltip-overrides.theme' as tooltip-overrides-* show tooltip-overrides-theme;
+@forward './layout/src/modules/menu-item/menu-item.component.theme' as menu-item-* show menu-item-theme;
