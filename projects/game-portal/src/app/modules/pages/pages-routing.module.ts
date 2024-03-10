@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { MainLayoutComponent } from '../main-layout/main-layout.component';
 
 const routes: Routes = [
@@ -33,8 +34,8 @@ const routes: Routes = [
                 loadChildren: () =>
                     import(
                         /* webpackChunkName: "gpll-post-view.module.chunk" */
-                        '../../../../../itdl/game-portal/features/posts/src/modules/gpll-post-view.module' // Adjust the path to the correct module
-                    ).then((m) => m.GpllPostViewModule ),
+                        '../game-posts-page/game-posts-page.module' // Adjust the path to the correct module
+                    ).then((m) => m.GamePostsPageModule),
             },
             {
                 path: 'game',
@@ -60,3 +61,4 @@ const routes: Routes = [
     exports: [RouterModule],
 })
 export class GplPagesRoutingModule {}
+
