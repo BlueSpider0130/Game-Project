@@ -1,54 +1,57 @@
-import { Component, ContentChild, Input, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { MOCK_POSTS } from '../../../entities/src/models/mock-posts';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+
 import { IGamePost } from '../../../entities/src/models/post.model';
-import { GamePost } from '../../../entities/src/models/post.model';
-import { MatCardModule } from '@angular/material/card';
-import { GpllPostViewListModule } from './gpll-post-view-list.module';
-import { GamePostsState } from '../../../ng-xs/src/game-posts.state';
-import { Select } from '@ngxs/store';
-import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'gpll-game-post-view-list',
-  templateUrl: './gpll-post-view-list.component.html',
-  styleUrls: ['./gpll-post-view-list.component.css'],
-  providers: [DatePipe],
-  //imports: [MatCardModule, GpllPostViewListModule],
-  //standalone: true
+    selector: 'gpll-game-post-view-list',
+    templateUrl: './gpll-post-view-list.component.html',
+    styleUrls: ['./gpll-post-view-list.component.css'],
+    providers: [DatePipe],
+    //imports: [MatCardModule, GpllPostViewListModule],
+    //standalone: true
 })
-export class GpllGamePostViewListComponent{
+export class GpllGamePostViewListComponent implements OnInit, OnDestroy {
+    @Input() posts$!: Observable<IGamePost[]>;
 
-  constructor(private datePipe: DatePipe) {}
+    nonFilteredPosts!: IGamePost[];
+    filteredPosts!: IGamePost[];
+    source!: Subscription;
+    filterHighlight = false;
+    filterText = '';
 
-  // ngOnInit(): void {
-  //     console.log("posts", this.posts)
-  //   // this.filteredPosts = this.posts;
-  //   // console.log(this.filteredPosts);
-  // }
+    constructor(private datePipe: DatePipe) {}
 
-  // applyFilter(event?: Event): void {
-  //   if (event && event.target) {
-  //     const filterValue = (event.target as HTMLInputElement).value;
-  //     this.filteredPosts = this.posts.filter(post =>
-  //       post.name.toLowerCase().includes(filterValue.toLowerCase())
-  //     );
-
-  //     // Highlight filter input for 2 seconds
-  //     this.filterHighlight = true;
-  //     setTimeout(() => {
-  //       this.filterHighlight = false;
-  //     }, 2000);
-  //   }
-  // }
-
-  formatDate(date: any): string {
-    if (date) {
-      return this.datePipe.transform(date, 'yyyy-MM-dd') || '';
+    ngOnInit() {
+        this.source = this.posts$.subscribe((posts: IGamePost[]) => {
+            this.nonFilteredPosts = posts;
+            this.applyFilter();
+        });
     }
-    return '';
-  }
 
-  //@Select(GamePostsState.getGamePosts) gamePosts$: Observable<IGamePost[]> | undefined;
-  
+    ngOnDestroy() {
+        this.source.unsubscribe();
+    }
+
+    public applyFilter() {
+        this.filteredPosts = this.nonFilteredPosts.filter((post) =>
+            post.name.toLowerCase().includes(this.filterText.toLowerCase()),
+        );
+        // Highlight filter input for 2 seconds
+        this.filterHighlight = true;
+        setTimeout(() => {
+            this.filterHighlight = false;
+        }, 2000);
+    }
+
+    public formatDate(date: any): string {
+        if (date) {
+            return this.datePipe.transform(date, 'yyyy-MM-dd') || '';
+        }
+        return '';
+    }
+
+    //@Select(GamePostsState.getGamePosts) gamePosts$: Observable<IGamePost[]> | undefined;
 }
+
