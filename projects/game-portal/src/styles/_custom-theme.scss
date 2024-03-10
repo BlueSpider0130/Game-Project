@@ -51,9 +51,9 @@ $game-portal-dark-theme: mat.define-dark-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 
-@import 'dist/itdl/game-portal/ui/input-control/theming';
-@import 'dist/itdl/game-portal/ui/select-control/theming';
-@import 'dist/itdl/game-portal/ui/card/theming';
+@import '../../../itdl/game-portal/ui/input-control/theming';
+@import '../../../itdl/game-portal/ui/select-control/theming';
+@import '../../../itdl/game-portal/ui/card/theming';
 
 @include mat.all-component-themes($game-portal-dark-theme);
 @include mat.typography-hierarchy($game-portal-dark-typography);
@@ -89,3 +89,4 @@ body.light-theme {
 }
 
 /* You can add global styles to this file, and also import other style files */
+
