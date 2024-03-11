@@ -1,23 +1,31 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IGamePost } from '../../entities/src/models/post.model';
+import { Injectable } from '@angular/core';
 import { EntityApiService } from '@itdl/game-portal/http';
+import { from, Observable } from 'rxjs';
+
+import { MOCK_POSTS } from '../../entities/src/models/mock-posts';
+import { IGamePost } from '../../entities/src/models/post.model';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class GamePostApiService extends EntityApiService<IGamePost, any> {
-  protected getApiUrl(): string {
-    return '/api/v1/game-posts';
-  }
+    protected getApiUrl(): string {
+        return '/api/v1/game-posts';
+    }
 
-  constructor(private httpClient: HttpClient) {
-    super();
-  }
+    constructor(private httpClient: HttpClient) {
+        super();
+    }
 
-  // Fetch game posts from backend
-  getGamePosts(): Observable<IGamePost[]> {
-    return this.httpClient.get<IGamePost[]>(`${this.apiUrl}`);
-  }
+    // Fetch game posts from backend
+    public getGamePosts(): Observable<IGamePost[]> {
+        return from(
+            new Promise<IGamePost[]>((resolve) => {
+                setTimeout(() => {
+                    resolve(MOCK_POSTS);
+                }, 3000); // Simulate 3 seconds delay
+            }),
+        );
+    }
 }
